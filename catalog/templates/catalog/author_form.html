@@ -1,0 +1,11 @@
+{% extends "base_generic.html"%}
+{% block title %} Yazar Düzenle {% endblock %}
+{% block content %} 
+<h1> Yazar </h1>
+<hr>
+<form action ="" method ="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value = "Gönder">
+</form>
+{% endblock %}

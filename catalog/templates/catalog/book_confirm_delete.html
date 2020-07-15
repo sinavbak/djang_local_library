@@ -1,0 +1,10 @@
+{% extends "base_generic.html"%}
+{% block title %} Kitap Sil {% endblock %}
+{% block content %} 
+<h1>Kitabı Sil?</h1>
+<p>{{ book }} kitabını silmek istediğinize emin misiniz?</p>
+<form action ="" method ="POST">
+{%csrf_token%}
+<input type = "submit" value ="Sil">
+</form>
+{% endblock %}

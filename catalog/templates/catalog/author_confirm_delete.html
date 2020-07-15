@@ -1,0 +1,10 @@
+{% extends "base_generic.html"%}
+{% block title %} Yazar Sil {% endblock %}
+{% block content %} 
+<h1>Yazarı Sil?</h1>
+<p>{{ author }} yazarı silmek istediğinize eminmisiniz?</p>
+<form action ="" method ="POST">
+{%csrf_token%}
+<input type = "submit" value ="Sil">
+</form>
+{% endblock %}
