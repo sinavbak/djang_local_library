@@ -6,9 +6,9 @@
     <hr>
     <b>Yazarı Düzenle</b>
     <ul>
-        <li><a href = "{% url 'author_create' %}">Yeni Yazar</a></li>
-        <li><a href = "{% url 'author_update' author.pk%}">Bu yazarı Düzenle</a></li>
-        <li><a href = "{% url 'author_delete' author.pk%}">Bu yazarı Sil</a></li>
+        <li><a href = "{% url 'catalog:author_create' %}">Yeni Yazar</a></li>
+        <li><a href = "{% url 'catalog:author_update' author.pk%}">Bu yazarı Düzenle</a></li>
+        <li><a href = "{% url 'catalog:author_delete' author.pk%}">Bu yazarı Sil</a></li>
     </ul>
     {% endif %}
     {% endblock%}
@@ -22,7 +22,7 @@
 <ul>
 {% for book in author.book_set.all  %}
     <li>
-        <a href ="{% url 'book-detail' book.pk %}">{{book.title}}</a>({{book.pk}})
+        <a href ="{% url 'catalog:book-detail' book.pk %}">{{book.title}}</a>({{book.pk}})
         <p>{{book.summary}}</p>
     </li>
 {% endfor %}

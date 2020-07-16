@@ -4,16 +4,16 @@
     <hr>
     <b>Kitabı Düzenle</b>
     <ul>
-        <li><a href = "{% url 'book_create' %}">Yeni Kitap</a></li>
-        <li><a href = "{% url 'book_update' book.pk%}">Bu Kitabı Düzenle</a></li>
-        <li><a href = "{% url 'book_delete' book.pk%}">Bu Kitabı Sil</a></li>
+        <li><a href = "{% url 'catalog:book_create' %}">Yeni Kitap</a></li>
+        <li><a href = "{% url 'catalog:book_update' book.pk%}">Bu Kitabı Düzenle</a></li>
+        <li><a href = "{% url 'catalog:book_delete' book.pk%}">Bu Kitabı Sil</a></li>
     </ul>
     {% endif %}
     {% endblock%}
 {% block content %}
   <h1>Title: {{ book.title }}</h1>
 
-  <p><strong>Author:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Author:</strong> <a href="{% url 'catalog:author-detail' book.author.pk %}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
   <p><strong>Summary:</strong> {{ book.summary }}</p>
   <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
   <p><strong>Language:</strong> {{ book.languange }}</p>  

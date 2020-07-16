@@ -15,22 +15,23 @@
       <div class="col-sm-2">
       {% block sidebar %}
         <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'books'%}">All books</a></li>
-          <li><a href="{% url 'author'%}">All authors</a></li>
+          <li><a href="{% url 'catalog:index' %}">Home</a></li>
+          <li><a href="{% url 'catalog:books'%}">All books</a></li>
+          <li><a href="{% url 'catalog:author'%}">All authors</a></li>
+          <li><a href="{% url 'blog:index'%}">Blog</a></li>
         </ul>
         <hr>
         {% if user.is_authenticated%}
         Merhaba <b>{{ user.get_username}}</b> 
         <ul>
-             <li><a href="{% url 'my-borrowed' %}">My Borrowed</a></li>   
+             <li><a href="{% url 'catalog:my-borrowed' %}">My Borrowed</a></li>   
             <li><a href ="{% url 'logout'%}">Çıkış yap</a></li>
         </ul>
         <hr>
          {% if perms.catalog.can_view_all %}
          <b>Staff</b>
          <ul>
-             <li><a href="{% url 'all-borrowed' %}">Tüm Borrowed</a></li>
+             <li><a href="{% url 'catalog:all-borrowed' %}">Tüm Borrowed</a></li>
          </ul>
         {% endif %}
         {% else %}
